@@ -1,5 +1,9 @@
 name: CTR Model CI/CD
 on: [push]
+
+permissions: write-all
+
+
 jobs:
   run:
     runs-on: ubuntu-latest
