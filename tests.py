@@ -49,6 +49,12 @@ class TestCTRPipeline(unittest.TestCase):
             
         except Exception as e:
             self.fail(f"Smoke Test Failed with error: {str(e)}")
+            
+        def test_sabotage(self):
+        # This test will fail intentionally because 1 is not equal to 0.
+            self.assertEqual(1, 0, "SABOTAGE: Deployment stopped due to intentional failure! 🛑")
 
 if __name__ == '__main__':
     unittest.main()
+    
+    
