@@ -3,7 +3,6 @@ on: [push]
 
 permissions: write-all
 
-
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -16,18 +15,26 @@ jobs:
           
       - uses: iterative/setup-cml@v1
       
-      - name: Install Dependencies
+      # 1. BUILD AŞAMASI (İsmi değiştirdik)
+      - name: Build (Install Dependencies)
         run: |
           pip install -r requirements.txt
-          
+          pip install flake8  # Lint için gerekli
+
+      # 2. LINT AŞAMASI (Yeni ekledik - Claude istiyor diye)
+      - name: Lint Code
+        run: |
+          # Kodda sözdizimi hatası var mı diye bakar (Güvenli mod)
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      # 3. TEST AŞAMASI (Unit ve Smoke burada çalışıyor)
       - name: Run Tests (Unit & Smoke)
         run: |
-          # Testleri çalıştır
           python tests.py
-          
+
+      # 4. TRAIN AŞAMASI
       - name: Train Model
         run: |
-          # Modeli eğit
           python train_pipeline.py
           
       - name: Write CML Report
@@ -35,8 +42,9 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "## CTR Model Pipeline Report" > report.md
-          echo "✅ Unit Tests Passed" >> report.md
-          echo "✅ Smoke Tests Passed" >> report.md
+          echo "✅ Build & Dependencies Installed" >> report.md
+          echo "✅ Lint Checks Passed" >> report.md
+          echo "✅ Unit & Smoke Tests Passed" >> report.md
           echo "✅ Model Training Completed Successfully" >> report.md
           
           cml comment create report.md
