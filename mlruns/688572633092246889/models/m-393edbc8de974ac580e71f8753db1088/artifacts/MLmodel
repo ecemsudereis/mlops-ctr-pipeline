@@ -1,0 +1,22 @@
+artifact_path: file:///Users/ecemsudereis/Desktop/CTR_Project/mlruns/688572633092246889/models/m-393edbc8de974ac580e71f8753db1088/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.13.9
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.core.Booster
+    model_format: ubj
+    xgb_version: 3.1.2
+mlflow_version: 3.8.1
+model_id: m-393edbc8de974ac580e71f8753db1088
+model_size_bytes: 1226727
+model_uuid: m-393edbc8de974ac580e71f8753db1088
+prompts: null
+run_id: dc68a05c97d2489ba0550e5849a74e53
+utc_time_created: '2026-01-01 15:00:59.123473'

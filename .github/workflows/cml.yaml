@@ -1,0 +1,38 @@
+name: CTR Model CI/CD
+on: [push]
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+          
+      - uses: iterative/setup-cml@v1
+      
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+          
+      - name: Run Tests (Unit & Smoke)
+        run: |
+          # Testleri çalıştır
+          python tests.py
+          
+      - name: Train Model
+        run: |
+          # Modeli eğit
+          python train_pipeline.py
+          
+      - name: Write CML Report
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "## CTR Model Pipeline Report" > report.md
+          echo "✅ Unit Tests Passed" >> report.md
+          echo "✅ Smoke Tests Passed" >> report.md
+          echo "✅ Model Training Completed Successfully" >> report.md
+          
+          cml comment create report.md

@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ecemsudereis/Desktop/CTR_Project/mlruns/688572633092246889/23f802788ae940799f21a046f1a8cdf4/artifacts
+deleted_time: 1767280759160
+end_time: 1767280686307
+entry_point_name: ''
+experiment_id: '688572633092246889'
+lifecycle_stage: deleted
+run_id: 23f802788ae940799f21a046f1a8cdf4
+run_name: awesome-shrew-343
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767280682631
+status: 3
+tags: []
+user_id: ecemsudereis

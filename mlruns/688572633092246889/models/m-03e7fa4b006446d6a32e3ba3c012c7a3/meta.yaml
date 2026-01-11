@@ -1,0 +1,10 @@
+artifact_location: file:///Users/ecemsudereis/Desktop/CTR_Project/mlruns/688572633092246889/models/m-03e7fa4b006446d6a32e3ba3c012c7a3/artifacts
+creation_timestamp: 1767281529732
+experiment_id: '688572633092246889'
+last_updated_timestamp: 1767281531317
+model_id: m-03e7fa4b006446d6a32e3ba3c012c7a3
+model_type: null
+name: model
+source_run_id: 57815875e30d4bf29712c49999f42918
+status: 2
+status_message: null

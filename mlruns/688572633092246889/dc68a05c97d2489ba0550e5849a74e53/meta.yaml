@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ecemsudereis/Desktop/CTR_Project/mlruns/688572633092246889/dc68a05c97d2489ba0550e5849a74e53/artifacts
+deleted_time: 1767280754331
+end_time: 1767279660746
+entry_point_name: ''
+experiment_id: '688572633092246889'
+lifecycle_stage: deleted
+run_id: dc68a05c97d2489ba0550e5849a74e53
+run_name: bouncy-hound-328
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1767279657018
+status: 3
+tags: []
+user_id: ecemsudereis

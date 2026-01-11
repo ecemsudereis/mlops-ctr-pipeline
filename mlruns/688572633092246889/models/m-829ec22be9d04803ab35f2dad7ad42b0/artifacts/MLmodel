@@ -1,0 +1,22 @@
+artifact_path: file:///Users/ecemsudereis/Desktop/CTR_Project/mlruns/688572633092246889/models/m-829ec22be9d04803ab35f2dad7ad42b0/artifacts
+flavors:
+  python_function:
+    data: model.xgb
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.9.6
+  xgboost:
+    code: null
+    data: model.xgb
+    model_class: xgboost.core.Booster
+    model_format: xgb
+    xgb_version: 2.1.4
+mlflow_version: 3.1.4
+model_id: m-829ec22be9d04803ab35f2dad7ad42b0
+model_size_bytes: 1226617
+model_uuid: m-829ec22be9d04803ab35f2dad7ad42b0
+prompts: null
+run_id: 93b306761008451f884552da5add0aa2
+utc_time_created: '2025-12-30 21:08:24.813710'
